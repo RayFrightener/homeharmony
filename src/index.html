@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Duty Assignment</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Duty Assignment </h1>
-        <div class="formContainer">
-            <form id="userForm">
-                <h2>Add Roommate</h2>
-                <input type="text" id="userName" placeholder="Name" required>
-                <input type="email" id="userEmail" placeholder="Email" required>
-                <input type="text" id="userPhone" placeholder="Phone" required>
-                <button type="submit"> Add Roommate </button>
-            </form>
-            <form id="dutyForm">
-                <h2>Create Duties</h2>
-                <input type="text" id="dutyName" placeholder="Duty" required>
-                <button type="submit">Add Duty</button>
-            </form>           
-        </div>
+  <div class="container">
+    <h1>Duty Assignment</h1>
+    <div class="form-container">
+      <form id="userForm">
+        <h2>Add Roommate</h2>
+        <input type="text" id="userName" placeholder="Name" required>
+        <input type="email" id="userEmail" placeholder="Email" required>
+        <input type="text" id="userPhone" placeholder="Phone (optional)">
+        <button type="submit">Add Roommate</button>
+      </form>
+      <form id="dutyForm">
+        <h2>Add Duty</h2>
+        <input type="text" id="dutyName" placeholder="Duty" required>
+        <button type="submit">Add Duty</button>
+      </form>
+    </div>
     <div class="assignment-container">
-        <h2>Assignment Dashboard</h2>
-        <div class="list-container">
-            <div>
-                <h3>Roommates</h3>
-                <ul id="userList"></ul>
-            </div>
-            <div>
-                <h3>Duties</h3>
-            </div>
+      <h2>Assignment Dashboard</h2>
+      <div class="list-container">
+        <div>
+          <h3>Roommates</h3>
+          <ul id="userList"></ul>
         </div>
         <div>
-            <h3>Assign Duties</h3>
-            <form id="assignmentForm">
-                <select id="userSelect"></select>
-                <select id="dutySelect"></select>
-                <button type="submit">Assign</button>
-            </form>
+          <h3>Duties</h3>
+          <ul id="dutyList"></ul>
         </div>
+      </div>
+      <div>
+        <h3>Assign Duties</h3>
+        <form id="assignmentForm">
+          <select id="userSelect"></select>
+          <select id="dutySelect"></select>
+          <button type="submit">Assign</button>
+        </form>
+      </div>
     </div>
-    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
