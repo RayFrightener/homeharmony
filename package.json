@@ -1,0 +1,30 @@
+{
+  "name": "homeharmony",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+  "build": "webpack",
+  "watch": "webpack --watch",
+  "start": "webpack serve",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayFrightener/homeharmony.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayFrightener/homeharmony/issues"
+  },
+  "homepage": "https://github.com/RayFrightener/homeharmony#readme",
+  "devDependencies": {
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
