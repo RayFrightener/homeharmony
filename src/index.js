@@ -11,4 +11,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let users = [];
     let duties = [];
+
+    userForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const userName = document.getElementById('userName').value;
+        const userEmail = document.getElementById('userEmail').value;
+        const userPhone = document.getElementById('userPhone').value;
+        const user = { name: userName, email: userEmail, phone: userPhone };
+        users.push(user);
+        updateUserList();
+        updateUserSelect();
+        userForm.reset();
+    });
+
+    dutyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const dutyName = document.getElementById('dutyName');
+        updateDutyList();
+        updateDutySelect();
+        
+    });
 });
