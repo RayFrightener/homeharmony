@@ -1,52 +1,87 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1, h2, h3 {
-    color: #333;
-  }
-  
-  .form-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    width: 45%;
-  }
-  
-  input, button, select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    box-sizing: border-box;
-  }
-  
-  .list-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  ul li {
-    background-color: #f9f9f9;
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-  }
+  background-color: #000000; /* Pure black background */
+  color: #D3D3D3; /* Light gray text color for better readability */
+  font-size: 16px; /* Increase base font size */
+}
+button {
+  background-color: #007BFF; /* Bright blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block display */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Input Field Styles */
+input[type="text"], input[type="tel"], input[type="email"], select {
+  width: 100%; /* Full width */
+  padding: 12px 20px; /* Padding */
+  margin: 8px 0; /* Margin */
+  display: inline-block; /* Inline-block display */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  font-size: 15px; /* Font size */
+  background-color: #f8f8f8; /* Light gray background */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+
+input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus {
+  border-color: #007BFF; /* Bright blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+.container {
+  display: flex;   
+  justify-content: space-between;
+}
+
+.form-container {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-container:last-child {
+  margin-right: 0;
+}
+
+.assignmentBoard {
+  display: flex;
+  flex-direction: column; /* Change to column layout */
+  justify-content: center;
+  align-items: center; /* Center align items */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+.assignmentFormInputs{
+  width: 100%;
+}
+
+form label, form input, form select, form button {
+  width: 100%;
+  margin-bottom: 10px;
+}				
+
+form button {
+  width: auto;
+  align-self: center;
+}
+
+fieldset {
+  display: flex;
+  flex-direction: column;
+}

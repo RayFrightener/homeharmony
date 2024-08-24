@@ -1,49 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Duty Assignment</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>homeHarmony</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Duty Assignment</h1>
-    <div class="form-container">
-      <form id="userForm">
-        <h2>Add Roommate</h2>
-        <input type="text" id="userName" placeholder="Name" required>
-        <input type="email" id="userEmail" placeholder="Email" required>
-        <input type="text" id="userPhone" placeholder="Phone (optional)">
-        <button type="submit">Add Roommate</button>
-      </form>
-      <form id="dutyForm">
-        <h2>Add Duty</h2>
-        <input type="text" id="dutyName" placeholder="Duty" required>
-        <button type="submit">Add Duty</button>
-      </form>
+    <div class="container">
+        <div class="form-container">
+            <form>
+                <fieldset>
+                    <legend>Roommates</legend>
+
+                    <label for="name">Enter Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Enter Email:</label>
+                    <input type="text" id="email" name="email" required>
+
+                    <label for="phone">Enter Phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="US numbers only">
+
+                    <button type="submit">Create Roommate</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <form>
+                <fieldset>
+                    <legend>Duty Creation</legend>
+
+                    <label for="duty">What is the duty?</label>
+                    <input type="text" id="duty" name="duty" required>
+
+                    <button type="submit">Create Duty</button>
+                </fieldset>
+            </form>
+        </div>
     </div>
-    <div class="assignment-container">
-      <h2>Assignment Dashboard</h2>
-      <div class="list-container">
-        <div>
-          <h3>Roommates</h3>
-          <ul id="userList"></ul>
-        </div>
-        <div>
-          <h3>Duties</h3>
-          <ul id="dutyList"></ul>
-        </div>
-      </div>
-      <div>
-        <h3>Assign Duties</h3>
-        <form id="assignmentForm">
-          <select id="userSelect"></select>
-          <select id="dutySelect"></select>
-          <button type="submit">Assign</button>
+
+    <div class="assignmentBoard">
+        <h2>Assign Duties Here</h2>
+        <form id="assignmentForm" action="/submit-assignment" method="post">
+            <label for="roommateName">Select Roommate</label>
+            <select class="assignmentFormInputs" id="roommateName" name="roommateAssigned">
+                <option value="Pranshu">Pranshu Chawla</option>
+                <option value="Varun Anand">Varun Anand</option>
+      	        <option value="Eklavya Amrute">Eklavya Amrute</option>
+            </select>
+
+            <label for="dutySelected">Select Duty</label>
+            <select  class="assignmentFormInputs" id="dutySelected" name="dutySelected">
+                <option value="Clean the kitchen">Clean Kitchen</option>
+                <option value="Clean the bathroom">Clean Bathroom</option>
+                <option value="Sweep Living Area">Sweep Living Area</option>
+            </select>
+
+            <label for="chosenDay">Select Day</label>
+            <select class="assignmentFormInputs" id="chosenDay" name="chosenDay">
+                <option value="friday">Friday</option>
+                <option value="saturday">Saturday</option>
+                <option value="sunday">Sunday</option>
+            </select>
+            <button type="submit">Assign Duty</button>
         </form>
-      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            flatpickr("#time", {
+                enableTime: true,
+                noCalendar: true,
+                dateFormat: "H:i",
+                time_24hr: true
+            });
+        });
+    </script>
 </body>
 </html>
