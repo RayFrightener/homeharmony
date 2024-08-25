@@ -25,7 +25,7 @@ button:hover {
 }
 
 /* Input Field Styles */
-input[type="text"], input[type="tel"], input[type="email"], select {
+#name, #email, #duty, input[type="text"], input[type="tel"], input[type="email"], select {
   width: 100%; /* Full width */
   padding: 12px 20px; /* Padding */
   margin: 8px 0; /* Margin */
@@ -43,6 +43,9 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, se
   outline: none; /* Remove default outline */
 }
 
+#roommateName, #dutySelected, #chosenDay{
+    width: 300px;
+}
 .container {
   display: flex;   
   justify-content: center;
@@ -50,12 +53,6 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, se
 
 .form-container {
   flex: 1;
-  margin-right: 10px;
-  padding: 0 30px;
-}
-
-.form-container:last-child {
-  margin-right: 0;
 }
 
 .assignmentBoard {
@@ -75,15 +72,18 @@ legend {
 form {
   display: flex;
   flex-direction: column;
+  /* justify-content: center;
+  align-items: center; */
+  width: 400px;
 }
 .assignmentFormInputs{
   width: 100%;
 }
 
-form label, form input, form select, form button {
+/* form label, form input, form select, form button {
   width: 100%;
   margin-bottom: 10px;
-}				
+}				 */
 
 form button {
   width: auto;
