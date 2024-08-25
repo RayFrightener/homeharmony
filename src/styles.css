@@ -45,12 +45,13 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, se
 
 .container {
   display: flex;   
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .form-container {
   flex: 1;
   margin-right: 10px;
+  padding: 0 30px;
 }
 
 .form-container:last-child {
@@ -64,8 +65,12 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, se
   align-items: center; /* Center align items */
 }
 
+.assignmentBoard label{
+  margin: 0 0 0 0;
+}
+
 legend {
-  font-size: 20px;
+  font-size: 17px;
 }
 form {
   display: flex;
@@ -96,5 +101,12 @@ fieldset {
   padding-left: 20%;
   padding-right: 20%;
   padding-top: 20px;
-  padding-bottom: 20px;
+}
+
+#howTo p{
+    margin: 7px 0px;
+}
+
+.container label{
+    margin: 0 0;
 }

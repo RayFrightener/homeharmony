@@ -12,16 +12,18 @@
 </head>
 <body>
     <div id="howTo">
-        <p>
-            What is this WebApp? This is a web application that lets you create a rommate list
-            and assign them house-hold duties.
+        <p>   
+            Welcome to HomeHarmony!
         </p>
         <p>
-            How to use: enter each roommate's name, email address
-            and phone number. Create all duties using the Duty Creation form.
-            Each roommate and duty will then appear Assign Duties here section, where you
-            can assign duties and also select which rotation pattern you want 
-            to use.
+            HomeHarmony is a web application that sends duty reminders to your roommates! 
+            It can also be used by people living in the same household such as a family.
+        </p>
+        <p>
+            How to use the app: enter each roommate's name, email address
+            and phone number in the Create Roommate Section, then create duties in the Create Duties Section.
+            Each roommate and duty will then appear in the Assign Duties here section, from there you can assign each duty to 
+            whomever you want to. 
         </p>
     </div>
     <div class="container">
@@ -31,13 +33,13 @@
                     <legend>Create Roommate list</legend>
 
                     <label for="name">Enter Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name" placeholder="Type roommate's name".required>
 
                     <label for="email">Enter Email:</label>
-                    <input type="text" id="email" name="email" required>
+                    <input type="text" id="email" name="email" placeholder="Type roommate's email" required>
 
                     <label for="phone">Enter Phone number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="US numbers only">
+                    <input type="tel" id="phone" name="phone" placeholder="Type roommate's phone no. (US numbers only)">
 
                     <button type="submit">Create Roommate</button>
                 </fieldset>
@@ -49,40 +51,39 @@
                 <fieldset>
                     <legend>Create Duties</legend>
 
-                    <label for="duty">What is the duty?</label>
+                    <label for="duty">Define duty?</label>
                     <input type="text" id="duty" name="duty" placeholder='for e.g. "Clean kitchen", "Clean restroom".'  required>
 
                     <button type="submit">Create Duty</button>
                 </fieldset>
             </form>
         </div>
-    </div>
+        <div class="assignmentBoard">
+            <h2>Assign Duties Here</h2>
+            <form id="assignmentForm" action="/submit-assignment" method="post">
+                <label for="roommateName">Select Roommate</label>
+                <select class="assignmentFormInputs" id="roommateName" name="roommateAssigned">
+                    <option value="Pranshu">Pranshu Chawla</option>
+                    <option value="Varun Anand">Varun Anand</option>
+                    <option value="Eklavya Amrute">Eklavya Amrute</option>
+                </select>
 
-    <div class="assignmentBoard">
-        <h2>Assign Duties Here</h2>
-        <form id="assignmentForm" action="/submit-assignment" method="post">
-            <label for="roommateName">Select Roommate</label>
-            <select class="assignmentFormInputs" id="roommateName" name="roommateAssigned">
-                <option value="Pranshu">Pranshu Chawla</option>
-                <option value="Varun Anand">Varun Anand</option>
-      	        <option value="Eklavya Amrute">Eklavya Amrute</option>
-            </select>
+                <label for="dutySelected">Select Duty</label>
+                <select  class="assignmentFormInputs" id="dutySelected" name="dutySelected">
+                    <option value="Clean the kitchen">Clean Kitchen</option>
+                    <option value="Clean the bathroom">Clean Bathroom</option>
+                    <option value="Sweep Living Area">Sweep Living Area</option>
+                </select>
 
-            <label for="dutySelected">Select Duty</label>
-            <select  class="assignmentFormInputs" id="dutySelected" name="dutySelected">
-                <option value="Clean the kitchen">Clean Kitchen</option>
-                <option value="Clean the bathroom">Clean Bathroom</option>
-                <option value="Sweep Living Area">Sweep Living Area</option>
-            </select>
-
-            <label for="chosenDay">Select Day</label>
-            <select class="assignmentFormInputs" id="chosenDay" name="chosenDay">
-                <option value="friday">Friday</option>
-                <option value="saturday">Saturday</option>
-                <option value="sunday">Sunday</option>
-            </select>
-            <button type="submit">Assign Duty</button>
-        </form>
+                <label for="chosenDay">Select Day</label>
+                <select class="assignmentFormInputs" id="chosenDay" name="chosenDay">
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+                <button type="submit">Assign Duty</button>
+            </form>
+        </div>
     </div>
 
     <script>
