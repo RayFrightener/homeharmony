@@ -12,9 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let users = [];
   let duties = [];
 
-  // ESLint should highlight this as an unused variable
-  const unusedVariable = 42;
-
   userForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const userName = document.getElementById('userName').value;
@@ -23,7 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
     const user = { name: userName, email: userEmail, phone: userPhone };
     users.push(user);
     updateUserList();
-    updateUserSelect();
-    userForm.reset();
   });
 });
