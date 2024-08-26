@@ -1,31 +1,36 @@
-
-body{
-    background-color: #000000; /* Pure black background */
-    color: #D3D3D3; /* Light gray text color for better readability */
-    font-size: 16px; /* Increase base font size */
+body {
+  background-color: #000000; /* Pure black background */
+  color: #d3d3d3; /* Light gray text color for better readability */
+  font-size: 16px; /* Increase base font size */
 }
 
-button{
-    background-color: #007BFF; /* Bright blue background */
-    border: none; /* Remove default border */
-    color: white; /* White text */
-    padding: 15px 32px; /* Padding */
-    text-align: center; /* Center text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Inline-block display */
-    font-size: 16px; /* Font size */
-    margin: 4px 2px; /* Margin */
-    cursor: pointer; /* Pointer cursor on hover */
-    border-radius: 8px; /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition */
+button {
+  background-color: #007bff; /* Bright blue background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 15px 32px; /* Padding */
+  text-align: center; /* Center text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline-block display */
+  font-size: 16px; /* Font size */
+  margin: 4px 2px; /* Margin */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+  background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Input Field Styles */
-#name, #email, #duty, input[type="text"], input[type="tel"], input[type="email"], select {
+#name,
+#email,
+#duty,
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+select {
   width: 100%; /* Full width */
   padding: 12px 20px; /* Padding */
   margin: 8px 0; /* Margin */
@@ -38,16 +43,22 @@ button:hover {
   transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, select:focus {
-  border-color: #007BFF; /* Bright blue border on focus */
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
+select:focus {
+  border-color: #007bff; /* Bright blue border on focus */
   outline: none; /* Remove default outline */
 }
 
-#roommateName, #dutySelected, #chosenDay{
-    width: 300px;
+#roommateName,
+#dutySelected,
+#chosenDay,
+#chosenCycle {
+  width: 300px;
 }
 .container {
-  display: flex;   
+  display: flex;
   justify-content: center;
 }
 
@@ -55,28 +66,33 @@ input[type="text"]:focus, input[type="tel"]:focus, input[type="email"]:focus, se
   flex: 1;
 }
 
-.assignmentBoard {
+.assignmentBoard h2 {
   display: flex;
-  flex-direction: column; /* Change to column layout */
-  justify-content: center;
-  align-items: center; /* Center align items */
+  justify-content: center; /* Change to column layout */
+  /* justify-content: center; */
+  /* align-items: center; Center align items */
 }
 
-.assignmentBoard label{
+.assignmentBoard label {
   margin: 0 0 0 0;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 legend {
   font-size: 17px;
 }
 form {
   display: flex;
   flex-direction: column;
-  /* justify-content: center;
-  align-items: center; */
+  justify-content: center;
+  align-items: center;
   width: 400px;
 }
-.assignmentFormInputs{
+.assignmentFormInputs {
   width: 100%;
 }
 
@@ -95,7 +111,7 @@ fieldset {
   flex-direction: column;
 }
 
-#howTo{
+#howTo {
   display: flex;
   flex-direction: column;
   padding-left: 20%;
@@ -103,10 +119,10 @@ fieldset {
   padding-top: 20px;
 }
 
-#howTo p{
-    margin: 7px 0px;
+#howTo p {
+  margin: 7px 0px;
 }
 
-.container label{
-    margin: 0 0;
+.container label {
+  margin: 0 0;
 }

@@ -43,7 +43,7 @@
                     <input type="text" id="email" name="email" placeholder="Type roommate's email" required>
 
                     <label for="phone">Enter Phone number:</label>
-                    <input type="tel" id="phone" name="phone" placeholder="Type roommate's phone no. (US numbers only)">
+                    <input type="tel" id="phone" name="phone" placeholder="needs to be US number">
 
                     <button type="submit">Create Roommate</button>
                 </fieldset>
@@ -84,6 +84,12 @@
                     <option value="friday">Friday</option>
                     <option value="saturday">Saturday</option>
                     <option value="sunday">Sunday</option>
+                </select>
+                <label for="chosenCycle">Select Cycle</label>
+                <select class="assignmentFormInputs" id="chosenCycle" name="chosenCycle">
+                    <option value="weekly">Weekly</option>
+                    <option value="bi-weekly">Bi-weekly</option>
+                    <option value="monthly">Monthly</option>
                 </select>
                 <button type="submit">Assign Duty</button>
             </form>
