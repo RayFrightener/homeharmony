@@ -1,7 +1,9 @@
+/* Base Styles */
 body {
   background-color: #000000; /* Pure black background */
   color: #d3d3d3; /* Light gray text color for better readability */
-  font-size: 16px; /* Increase base font size */
+  font-size: 16px; /* Base font size */
+  transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 button {
@@ -24,12 +26,9 @@ button:hover {
 }
 
 /* Input Field Styles */
-#name,
-#email,
-#duty,
-input[type='text'],
-input[type='tel'],
-input[type='email'],
+input[type="text"],
+input[type="tel"],
+input[type="email"],
 select {
   width: 100%; /* Full width */
   padding: 12px 20px; /* Padding */
@@ -43,9 +42,9 @@ select {
   transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-input[type='text']:focus,
-input[type='tel']:focus,
-input[type='email']:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
 select:focus {
   border-color: #007bff; /* Bright blue border on focus */
   outline: none; /* Remove default outline */
@@ -55,51 +54,48 @@ select:focus {
 #dutySelected,
 #chosenDay,
 #chosenCycle {
-  width: 300px;
+  width: 100%; /* Full width by default */
 }
+
 .container {
   display: flex;
+  flex-direction: column; /* Stack items vertically by default */
   justify-content: center;
+  align-items: center;
 }
 
 .form-container {
-  flex: 1;
-}
-
-.assignmentBoard h2 {
-  display: flex;
-  justify-content: center; /* Change to column layout */
-  /* justify-content: center; */
-  /* align-items: center; Center align items */
-}
-
-.assignmentBoard label {
-  margin: 0 0 0 0;
-}
-
-.form-container {
+  width: 100%; /* Full width by default */
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
+
+.assignmentBoard h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.assignmentBoard label {
+  margin: 0;
+}
+
 legend {
   font-size: 17px;
 }
+
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  width: 100%; /* Full width by default */
 }
+
 .assignmentFormInputs {
   width: 100%;
 }
-
-/* form label, form input, form select, form button {
-  width: 100%;
-  margin-bottom: 10px;
-}				 */
 
 form button {
   width: auto;
@@ -124,5 +120,56 @@ fieldset {
 }
 
 .container label {
-  margin: 0 0;
+  margin: 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+  body {
+    font-size: 18px; /* Increase font size for tablets */
+  }
+
+  #roommateName,
+  #dutySelected,
+  #chosenDay,
+  #chosenCycle {
+    width: 400px; /* Adjust width for tablets */
+  }
+
+  .container {
+    flex-direction: row; /* Arrange items horizontally on tablets */
+  }
+
+  .form-container {
+    width: 50%; /* Half width on tablets */
+  }
+
+  form {
+    width: 400px; /* Fixed width for forms on tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 20px; /* Increase font size for desktops */
+  }
+
+  #roommateName,
+  #dutySelected,
+  #chosenDay,
+  #chosenCycle {
+    width: 500px; /* Adjust width for desktops */
+  }
+
+  .container {
+    flex-direction: row; /* Arrange items horizontally on desktops */
+  }
+
+  .form-container {
+    width: 50%; /* Half width on desktops */
+  }
+
+  form {
+    width: 400px; /* Fixed width for forms on desktops */
+  }
 }
