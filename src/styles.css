@@ -1,23 +1,34 @@
-/* Base Styles */
 body {
   background-color: #000000; /* Pure black background */
+
   color: #d3d3d3; /* Light gray text color for better readability */
-  font-size: 16px; /* Base font size */
-  transition: border-color 0.3s ease; /* Smooth transition for border color */
+
+  font-size: 16px; /* Increase base font size */
 }
 
 button {
   background-color: #007bff; /* Bright blue background */
+
   border: none; /* Remove default border */
+
   color: white; /* White text */
+
   padding: 15px 32px; /* Padding */
+
   text-align: center; /* Center text */
+
   text-decoration: none; /* Remove underline */
+
   display: inline-block; /* Inline-block display */
+
   font-size: 16px; /* Font size */
+
   margin: 4px 2px; /* Margin */
+
   cursor: pointer; /* Pointer cursor on hover */
+
   border-radius: 8px; /* Rounded corners */
+
   transition: background-color 0.3s ease; /* Smooth transition */
 }
 
@@ -26,27 +37,41 @@ button:hover {
 }
 
 /* Input Field Styles */
-input[type="text"],
-input[type="tel"],
-input[type="email"],
+
+#name,
+#email,
+#duty,
+input[type='text'],
+input[type='tel'],
+input[type='email'],
 select {
   width: 100%; /* Full width */
+
   padding: 12px 20px; /* Padding */
+
   margin: 8px 0; /* Margin */
+
   display: inline-block; /* Inline-block display */
+
   border: 1px solid #ccc; /* Light gray border */
+
   border-radius: 6px; /* Rounded corners */
+
   box-sizing: border-box; /* Include padding and border in element's total width and height */
+
   font-size: 15px; /* Font size */
+
   background-color: #f8f8f8; /* Light gray background */
+
   transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="email"]:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='email']:focus,
 select:focus {
   border-color: #007bff; /* Bright blue border on focus */
+
   outline: none; /* Remove default outline */
 }
 
@@ -54,31 +79,39 @@ select:focus {
 #dutySelected,
 #chosenDay,
 #chosenCycle {
-  width: 100%; /* Full width by default */
+  width: 300px;
 }
 
 .container {
   display: flex;
-  flex-direction: column; /* Stack items vertically by default */
+
   justify-content: center;
-  align-items: center;
 }
 
 .form-container {
-  width: 100%; /* Full width by default */
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex: 1;
 }
 
 .assignmentBoard h2 {
   display: flex;
-  justify-content: center;
+
+  justify-content: center; /* Change to column layout */
+
+  /* justify-content: center; */
+
+  /* align-items: center; Center align items */
 }
 
 .assignmentBoard label {
-  margin: 0;
+  margin: 0 0 0 0;
+}
+
+.form-container {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
 }
 
 legend {
@@ -87,31 +120,49 @@ legend {
 
 form {
   display: flex;
+
   flex-direction: column;
+
   justify-content: center;
+
   align-items: center;
-  width: 100%; /* Full width by default */
+
+  width: 400px;
 }
 
 .assignmentFormInputs {
   width: 100%;
 }
 
+/* form label, form input, form select, form button {
+
+width: 100%;
+
+margin-bottom: 10px;
+
+} */
+
 form button {
   width: auto;
+
   align-self: center;
 }
 
 fieldset {
   display: flex;
+
   flex-direction: column;
 }
 
 #howTo {
   display: flex;
+
   flex-direction: column;
+
   padding-left: 20%;
+
   padding-right: 20%;
+
   padding-top: 20px;
 }
 
@@ -120,56 +171,31 @@ fieldset {
 }
 
 .container label {
-  margin: 0;
+  margin: 0 0;
 }
 
-/* Media Queries for Responsiveness */
 @media (min-width: 768px) {
   body {
-    font-size: 18px; /* Increase font size for tablets */
+    font-size: 18px;
   }
 
   #roommateName,
   #dutySelected,
   #chosenDay,
   #chosenCycle {
-    width: 400px; /* Adjust width for tablets */
-  }
-
-  .container {
-    flex-direction: row; /* Arrange items horizontally on tablets */
-  }
-
-  .form-container {
-    width: 50%; /* Half width on tablets */
-  }
-
-  form {
-    width: 400px; /* Fixed width for forms on tablets */
+    width: 400px;
   }
 }
 
 @media (min-width: 1024px) {
   body {
-    font-size: 20px; /* Increase font size for desktops */
+    font-size: 20px;
   }
 
   #roommateName,
   #dutySelected,
   #chosenDay,
   #chosenCycle {
-    width: 500px; /* Adjust width for desktops */
-  }
-
-  .container {
-    flex-direction: row; /* Arrange items horizontally on desktops */
-  }
-
-  .form-container {
-    width: 50%; /* Half width on desktops */
-  }
-
-  form {
-    width: 400px; /* Fixed width for forms on desktops */
+    width: 500px;
   }
 }
