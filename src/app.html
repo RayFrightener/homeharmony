@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>homeHarmony</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+      <div class="container">
+        <div class="form-container">
+            <form>
+                <fieldset>
+                    <legend>Create Roommate list</legend>
+
+                    <label for="name">Enter Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Type roommate's name" required>
+
+                    <label for="email">Enter Email:</label>
+                    <input type="text" id="email" name="email" placeholder="Type roommate's email" required>
+
+                    <label for="phone">Enter Phone number:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="needs to be US number">
+
+                    <button type="submit">Create Roommate</button>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="form-container">
+            <form>
+                <fieldset>
+                    <legend>Create Duties</legend>
+
+                    <label for="duty">Define duty?</label>
+                    <input type="text" id="duty" name="duty" placeholder='for e.g. "Clean kitchen", "Clean restroom".'  required>
+
+                    <button type="submit">Create Duty</button>
+                </fieldset>
+            </form>
+        </div>
+        <div class="assignmentBoard">
+            <h2>Assign Duties Here</h2>
+            <form id="assignmentForm" action="/submit-assignment" method="post">
+                <label for="roommateName">Select Roommate</label>
+                <select class="assignmentFormInputs" id="roommateName" name="roommateAssigned">
+                    <option value="Pranshu">Pranshu Chawla</option>
+                    <option value="Varun Anand">Varun Anand</option>
+                    <option value="Eklavya Amrute">Eklavya Amrute</option>
+                </select>
+
+                <label for="dutySelected">Select Duty</label>
+                <select  class="assignmentFormInputs" id="dutySelected" name="dutySelected">
+                    <option value="Clean the kitchen">Clean Kitchen</option>
+                    <option value="Clean the bathroom">Clean Bathroom</option>
+                    <option value="Sweep Living Area">Sweep Living Area</option>
+                </select>
+
+                <label for="chosenDay">Select Day</label>
+                <select class="assignmentFormInputs" id="chosenDay" name="chosenDay">
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+                <label for="chosenCycle">Select Cycle</label>
+                <select class="assignmentFormInputs" id="chosenCycle" name="chosenCycle">
+                    <option value="weekly">Weekly</option>
+                    <option value="bi-weekly">Bi-weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+                <button type="submit">Assign Duty</button>
+            </form>
+        </div>
+    </div>
+    <button onclick="navigateToHome()">Go to Home</button>
+
+<script>
+  function navigateToHome() {
+    window.location.href = '/';
+  }
+</script>
+</body>
+</html>
