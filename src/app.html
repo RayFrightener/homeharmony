@@ -9,7 +9,7 @@
 <body>
       <div class="container">
         <div class="form-container">
-            <form>
+            <form id="userForm" action="/submit-user" method="post">
                 <fieldset>
                     <legend>Create Roommate list</legend>
 
@@ -28,7 +28,7 @@
         </div>
 
         <div class="form-container">
-            <form>
+            <form id="dutyForm" action="/submit-duty" method="post">
                 <fieldset>
                     <legend>Create Duties</legend>
 
@@ -44,9 +44,8 @@
             <form id="assignmentForm" action="/submit-assignment" method="post">
                 <label for="roommateName">Select Roommate</label>
                 <select class="assignmentFormInputs" id="roommateName" name="roommateAssigned">
-                    <option value="Pranshu">Pranshu Chawla</option>
-                    <option value="Varun Anand">Varun Anand</option>
-                    <option value="Eklavya Amrute">Eklavya Amrute</option>
+                    <!-- keeping this below as reference of what I want -->
+                    <!-- <option value="Pranshu">Pranshu Chawla</option> -->
                 </select>
 
                 <label for="dutySelected">Select Duty</label>

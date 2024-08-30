@@ -1,24 +1,26 @@
 import './styles.css';
 
 document.addEventListener('DOMContentLoaded', () => {
+// capture roommate name and phone number, store phone number for later user
+// add roommate name to assignment form to the user select, 
   const userForm = document.getElementById('userForm');
-  const dutyForm = document.getElementById('dutyForm');
-  const assignmentForm = document.getElementById('assignmentForm');
-  const userList = document.getElementById('userList');
-  const dutyList = document.getElementById('dutyList');
-  const userSelect = document.getElementById('userSelect');
-  const dutySelect = document.getElementById('dutySelect');
+  userForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
 
-  let users = [];
-  let duties = [];
+    const response = await fetch('/submit-user', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, phone}),
+    });
 
-  userForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const userName = document.getElementById('userName').value;
-    const userEmail = document.getElementById('userEmail').value;
-    const userPhone = document.getElementById('userPhone').value;
-    const user = { name: userName, email: userEmail, phone: userPhone };
-    users.push(user);
-    updateUserList();
+    if (response.ok) {
+      console.log('Roommate created successfully');
+    } else {
+      console.log('Failed to create roommate');
+    }
   });
 });
