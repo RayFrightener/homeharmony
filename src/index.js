@@ -20,7 +20,51 @@ document.addEventListener('DOMContentLoaded', () => {
     if (response.ok) {
       console.log('Roommate created successfully');
     } else {
-      console.log('Failed to create roommate');
+      console.error('Failed to create roommate');
+    }
+  });
+
+// capture duty form inputs
+  const dutyForm = document.getElementById('dutyForm');
+  dutyForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const duty = document.getElementById('duty').value;
+    
+    const response = await fetch('/submit-duty', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({duty}),
+    });
+    if (response.ok) {
+      console.log('Duty created successfully');
+    } else {
+      console.error('Failed to create duty');
+    }
+  });
+
+  // capture assignment form inputs
+
+  const assignmentForm = document.getElementById('assignmentForm');
+  assignmentForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const roommateName = document.getElementById('roommateName').value;
+    const dutyDay = document.getElementById('chosenDay').value;
+    const dutyCycle = document.getElementById('chosenCycle').value;
+
+    const response = await fetch('/submit-assignment',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'applicaton/json',
+      }, 
+      body: JSON.stringify({roommateName, dutyDay, dutyCycle}),
+    });
+    if(response.ok) {
+      console.log('Assignment created successfully');
+    } else {
+      console.error('Failed to create assignment');
     }
   });
 });
