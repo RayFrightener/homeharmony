@@ -20,19 +20,20 @@ app.use(bodyParser.json()); //Configures your Express app to automatically parse
 app.use(cors()); // Configures your Express app to allow requests from other domains, making your server accessible from different origins.
 
 app.post('/api/roommates', async (req, res) => { // is a method provided by Express to handle HTTP POST requests. This is how you define what your server should do when it receives a POST request at a specific URL.
-  const { name, phone } = req.body; //contains the data sent by the client in the request body. In your case, this would be the JSON object sent from the frontend form.const { name, phone } = req.body; is destructuring. It extracts the name and phone properties from the req.body object and stores them in the variables name and phone.
-  const result = await pool.query('INSERT INTO roommates (name, phone) VALUES ($1, $2) RETURNING *', [name, phone]);
+  const { roommateName, roommatePhone } = req.body; //contains the data sent by the client in the request body. In your case, this would be the JSON object sent from the frontend form.const { name, phone } = req.body; is destructuring. It extracts the name and phone properties from the req.body object and stores them in the variables name and phone.
+  const result = await pool.query('INSERT INTO roommates (roommateName, roommatePhone) VALUES ($1, $2) RETURNING *', [roommateName, roommatePhone]);
   res.json(result.rows[0]); // res.json(...) sends a JSON response back to the client. result.rows[0] is the first row returned by the SQL query, which contains the data that was just inserted into the database
 });
 
-app.post('/api/duties', async (res, req) => {
-  const { name } = req.body;
-  const result = await pool.query('INSERT INTO duties (name) VALUES ($1) RETURNING *', [name]);
+app.post('/api/duties', async (req, res) => {
+  const { duty } = req.body;
+  const result = await pool.query('INSERT INTO duties (duty) VALUES ($1) RETURNING *', [duty]);
   res.json(result.rows[0]); 
 });
 
 app.post('/api/assignments', async (req, res) => {
-  const { userId, dutyId } = req.body;
+  const { roommateName, duty, dutyDay, dutyCycle } = req.body;
+  const result = await pool.query('INSERT INTO assignment (roommateName, duty, dutyDay, dutyCycle) VALUES ($1, $2, $3, $4) RETURNING *', [roommateName, duty, dutyDay, dutyCycle]);
   // Logic to send SMS using twilio or another service
   res.sendStatus(200);
 });

@@ -6,15 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const userForm = document.getElementById('userForm');
   userForm.addEventListener('submit', async (event) => {
     event.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
+    const roommateName = document.getElementById('name').value;
+    const roommatePhone = document.getElementById('phone').value;
 
-    const response = await fetch('/submit-user', {
+    const response = await fetch('/api/roommates', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ name, phone}),
+      body: JSON.stringify({ roommateName, roommatePhone}),
     });
 
     if (response.ok) {
@@ -25,13 +25,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 // capture duty form inputs
+// save them into database and populate the selectDuty field in assignment form.
   const dutyForm = document.getElementById('dutyForm');
   dutyForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     const duty = document.getElementById('duty').value;
     
-    const response = await fetch('/submit-duty', {
+    const response = await fetch('/api/duties', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,21 +46,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // capture assignment form inputs
-
+  // capture assignment form inputs(roommateName, dutySelected, chosenDay, chosenCycle)
+ // push it to server and save in database
+ // reflect it in a div for users to edit and remove. 
   const assignmentForm = document.getElementById('assignmentForm');
   assignmentForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const roommateName = document.getElementById('roommateName').value;
+    const duty = document.getElementById('dutySelected').value;
     const dutyDay = document.getElementById('chosenDay').value;
     const dutyCycle = document.getElementById('chosenCycle').value;
 
-    const response = await fetch('/submit-assignment',{
+    const response = await fetch('/api/assignments',{
       method: 'POST',
       headers: {
-        'Content-Type': 'applicaton/json',
+        'Content-Type': 'application/json',
       }, 
-      body: JSON.stringify({roommateName, dutyDay, dutyCycle}),
+      body: JSON.stringify({roommateName, duty, dutyDay, dutyCycle}),
     });
     if(response.ok) {
       console.log('Assignment created successfully');
