@@ -46,6 +46,9 @@ module.exports = {
       rewrites: [
         { from: /^\/app$/, to: '/app.html' }
       ]
+    },
+    proxy: {
+      '/api': 'http://localhost:3000'
     }
   }
 };

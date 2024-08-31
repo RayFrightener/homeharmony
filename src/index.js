@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const roommateName = document.getElementById('roommateName').value;
     const duty = document.getElementById('dutySelected').value;
     const dutyDay = document.getElementById('chosenDay').value;
+    const time = document.getElementById('chosenTime').value;
     const dutyCycle = document.getElementById('chosenCycle').value;
 
     const response = await fetch('/api/assignments',{
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       headers: {
         'Content-Type': 'application/json',
       }, 
-      body: JSON.stringify({roommateName, duty, dutyDay, dutyCycle}),
+      body: JSON.stringify({roommateName, duty, dutyDay, time, dutyCycle}),
     });
     if(response.ok) {
       console.log('Assignment created successfully');
