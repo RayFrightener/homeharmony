@@ -1,3 +1,4 @@
 node_modules
 dist
 backend/server.js
+backend/testDBConnection.js
