@@ -47,8 +47,11 @@ module.exports = {
         { from: /^\/app$/, to: '/app.html' }
       ]
     },
-    proxy: {
-      '/api': 'http://localhost:3000'
+    proxy: [
+    {
+      context: ['/api'],
+      target: 'http://localhost:3000'
     }
+    ]
   }
 };
