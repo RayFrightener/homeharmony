@@ -83,4 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   fetchRoommates();
   fetchDuties();
+
+// Form validation for phone number
+const phoneForm = document.getElementById('userForm');
+const phoneInput = document.getElementById('phone');
+const phoneError = document.getElementById('phoneError');
+
+// Add the error-message class to the phoneError element
+phoneError.classList.add('error-message');
+
+phoneForm.addEventListener('submit', function(event) {
+  const phoneNumber = phoneInput.value.trim();
+  const phoneRegex = /^\+1\d{10}$/;
+
+  if (!phoneRegex.test(phoneNumber)) {
+    phoneError.style.display = 'block';
+    event.preventDefault(); // Prevent form submission
+  } else {
+    phoneError.style.display = 'none';
+  }
+});
+
 });

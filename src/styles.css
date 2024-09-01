@@ -157,3 +157,12 @@ fieldset {
     width: 500px;
   }
 }
+.error-message {
+  display: none;
+  color: #856404;
+  background-color: #fff3cd;
+  border: 1px solid #ffeeba;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
