@@ -157,7 +157,7 @@ fieldset {
     width: 500px;
   }
 }
-.error-message {
+.error {
   display: none;
   color: #856404;
   background-color: #fff3cd;

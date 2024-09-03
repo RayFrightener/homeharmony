@@ -1,11 +1,15 @@
 import './styles.css';
-
+import { fetchRoommates, fetchDuties } from './fetchData';
+import { validatePhoneNumber } from './validation';
+// to do: modularize eventlisteners
 document.addEventListener('DOMContentLoaded', () => {
   const userForm = document.getElementById('userForm');
   const dutyForm = document.getElementById('dutyForm');
   const assignmentForm = document.getElementById('assignmentForm');
   const userSelect = document.getElementById('roommateName');
   const dutySelect = document.getElementById('dutySelected');
+  const phoneError = document.getElementById('phoneError');
+  const phoneInput = document.getElementById('phone');
 
   userForm.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -50,58 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  async function fetchRoommates() {
-    try {
-      const response = await fetch('/api/roommates');
-      const roommates = await response.json();
-      // Clear existing options
-      userSelect.innerHTML = '';
-      // Populate the select element with new options
-      roommates.forEach(roommate => {
-        userSelect.append(new Option(roommate.roommatename, roommate.id));
-      });
-    } catch (err) {
-      console.error('Error fetching roommates:', err);
-    }
-  }
-
-  // Fetch and populate duties
-  async function fetchDuties() {
-    try {
-      const response = await fetch('/api/duties');
-      const duties = await response.json();
-      // Clear existing options
-      dutySelect.innerHTML = '';
-      // Populate the select element with new options
-      duties.forEach(duty => {
-        dutySelect.append(new Option(duty.duty, duty.duty));
-      });
-    } catch (err) {
-      console.error('Error fetching duties:', err);
-    }
-  }
-
-  fetchRoommates();
-  fetchDuties();
-
-// Form validation for phone number
-const phoneForm = document.getElementById('userForm');
-const phoneInput = document.getElementById('phone');
-const phoneError = document.getElementById('phoneError');
 
 // Add the error-message class to the phoneError element
-phoneError.classList.add('error-message');
+// phoneError.classList.add('error-message');
 
-phoneForm.addEventListener('submit', function(event) {
-  const phoneNumber = phoneInput.value.trim();
-  const phoneRegex = /^\+1\d{10}$/;
-  
-  if (!phoneRegex.test(phoneNumber)) {
-    phoneError.style.display = 'block';
-    event.preventDefault(); // Prevent form submission
-  } else {
-    phoneError.style.display = 'none';
-  }
-});
-
+validatePhoneNumber(userForm, phoneInput, phoneError);
+fetchRoommates(userSelect);
+fetchDuties(dutySelect);
 });
