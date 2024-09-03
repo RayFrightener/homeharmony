@@ -95,7 +95,7 @@ phoneError.classList.add('error-message');
 phoneForm.addEventListener('submit', function(event) {
   const phoneNumber = phoneInput.value.trim();
   const phoneRegex = /^\+1\d{10}$/;
-
+  
   if (!phoneRegex.test(phoneNumber)) {
     phoneError.style.display = 'block';
     event.preventDefault(); // Prevent form submission
